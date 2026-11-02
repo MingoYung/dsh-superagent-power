@@ -1,0 +1,12 @@
+# Merge this override into the desktop profile's cordis.patch.yml.
+# Replace all example paths with your real absolute paths.
+# The package bundle inserts local-superagent-power; do not insert it twice.
+- id: local-superagent-power
+  config:
+    homePath: C:/DSH_HOME
+    profileName: superagent
+    nodePath: C:/Program Files/nodejs/node.exe
+    cliPath: C:/DSH_CLI/lib/bin.js
+    port: 3082
+    cwd: C:/DSH_HOME
+    # proxy: http://127.0.0.1:YOUR_PROXY_PORT

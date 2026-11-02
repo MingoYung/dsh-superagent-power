@@ -1,0 +1,81 @@
+{
+  "name": "@local/superagent-power",
+  "version": "0.1.0",
+  "description": "Sup: a shared DSH composer switch that gracefully starts and stops the Super-agent background process to free memory when not needed.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./bridge": "./bridge.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bridge.js",
+    "transport.js",
+    "cordis.patch.yml",
+    "README.md",
+    "docs",
+    "examples",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.txt"
+  ],
+  "engines": {
+    "node": ">=24",
+    "dsh": ">=0.2.1-rc.4"
+  },
+  "meta": {
+    "title": "Super-agent 全局开关",
+    "description": "全局统一状态；关闭独立后台进程以释放内存。"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MingoYung/dsh-superagent-power.git"
+  },
+  "homepage": "https://github.com/MingoYung/dsh-superagent-power#readme",
+  "bugs": {
+    "url": "https://github.com/MingoYung/dsh-superagent-power/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "superagent",
+    "plugin",
+    "memory",
+    "windows"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "check": "npm run build && npm test",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-client-connection": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-api-gateway": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-api-remote-access": "0.2.1-rc.5",
+    "@deepseek-ai/dsh-typert-registry": "0.2.1-rc.5",
+    "esbuild": "0.25.12",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "4.6.7"
+  }
+}

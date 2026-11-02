@@ -1,0 +1,15 @@
+node_modules/
+lib/
+work/
+artifacts/
+coverage/
+*.tgz
+*.log
+.env
+.env.*
+!.env.example
+control.key
+state.json
+latest_backup/
+.DS_Store
+Thumbs.db

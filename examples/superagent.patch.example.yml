@@ -1,0 +1,9 @@
+# Append to the independent Super-agent profile's cordis.patch.yml.
+# Start the desktop plugin once to generate the key before loading this bridge.
+- insert:
+    - id: local-superagent-power-bridge
+      name: C:/DSH_HOME/profiles/desktop/node_modules/@local/superagent-power/bridge.js
+      config:
+        homePath: C:/DSH_HOME
+        profileName: superagent
+        keyFile: C:/DSH_HOME/plugins/superagent-power/control.key
