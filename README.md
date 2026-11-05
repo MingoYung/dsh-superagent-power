@@ -95,7 +95,11 @@ npm pack
 
 ## 兼容范围与实现
 
-首版在 Windows、DSH NEXT `2.0.21-next`、内嵌 DSH `0.2.1-rc.4`、独立 CLI `0.2.1-rc.5` 和 Super-agent `0.1.0` 的本机安装上验证。DSH 宿主接口及 Super-agent 内部生命周期接口仍可能变化；其他版本需要重新验证。macOS / Linux 尚未完成验收。
+v0.1.1 明确支持 DSH `0.2.1-rc.4`、`0.2.1-rc.5` 和 `0.2.2-rc.1`。Windows 本机已检查 DSH NEXT `2.0.21-next` 和 `2.0.22-next`；新版对应 Cordis `4.1.0`。CI 对上述三个 DSH 版本分别运行同一组隔离测试。
+
+2026-11-05 的升级检查确认：新版桌面仍能加载 Sup、打开面板并读取全局状态；新版 Gateway 和进程控制回归通过。独立 Super-agent 仍使用 CLI `0.2.1-rc.5`，其隔离 profile 启停及进程退出再次通过。桌面更新不等于独立 CLI 已更新；本次没有将 Super-agent 的运行时升级到 `0.2.2-rc.1`。详细实测与未测边界见 [验证记录](docs/verification.md)。
+
+DSH 宿主接口及 Super-agent 内部生命周期接口仍可能变化；其他版本需要重新验证。macOS / Linux 尚未完成验收。
 
 插件依赖 `Runtime.stop()` 等现有接口，通过原生 slot 和 Remote 接入桌面。无需修改 DSH 的 `app.asar` 或给 Super-agent 核心打补丁。详细架构、状态同步和失效边界见 [设计说明](docs/design.md)。
 

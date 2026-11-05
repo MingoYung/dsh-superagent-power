@@ -18,7 +18,7 @@
 从 [Releases](https://github.com/MingoYung/dsh-superagent-power/releases) 下载 `.tgz`。也可在源码目录执行 `npm ci`、`npm run check`、`npm pack` 自行构建。
 
 ```powershell
-dsh plugin --profile desktop add C:/Downloads/local-superagent-power-0.1.0.tgz
+dsh plugin --profile desktop add C:/Downloads/local-superagent-power-0.1.1.tgz
 ```
 
 如果使用非默认 DSH_HOME，先在当前终端设置正确的 `DSH_HOME`，与桌面实际使用的目录一致。包名是 `@local/superagent-power`，这只是本地插件的命名空间，本项目没有发布到 npm registry。
